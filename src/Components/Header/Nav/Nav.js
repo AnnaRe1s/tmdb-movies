@@ -8,4 +8,5 @@ export default function Nav() {
       <img src={logo} alt="logo" />
     </nav>
   );
+
 }

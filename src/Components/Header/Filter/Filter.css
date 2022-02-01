@@ -1,0 +1,22 @@
+.btn {
+    display: flex;
+    flex-direction: row;
+ 
+}
+
+.btn button{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+
+  background-color: aqua;
+}
+
+.btn_x button{
+  background-color: red;
+}
+
+
+.btn_x i{
+    display: none;
+}
