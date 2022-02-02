@@ -1,6 +1,6 @@
 import "./Nav.css";
 
-import logo from "../../../Assests/logo.png";
+import logo from "../../Assests/logo.png";
 
 export default function Nav() {
   return (

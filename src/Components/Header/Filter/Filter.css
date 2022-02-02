@@ -1,22 +1,57 @@
-.btn {
-    display: flex;
-    flex-direction: row;
- 
+.filter {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  margin: 10px 5%;
 }
 
-.btn button{
+.filter_btn {
+  background-color: white;
+  padding: 5px;
+  border-radius: 5px;
+  border: none;
+  margin: 5px;
+}
+.filter_btn i {
+  display: none;
+}
+
+
+.filter_background {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: #2d0c5e;
+  color: white;
+  text-align: center;
+  padding: 5px;
+}
+
+.filter_background h1 {
+  margin: 15px;
+  text-align: left;
+}
+
+
+
+
+@media screen and (min-width: 600px) {
+
+  .filter {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
+    justify-content: center;
+    margin: 15px 25%;
+  }
+  
+  
+  .filter_background h1 {
+    margin: 35px;
+    text-align: center;
+  }
+  
 
-  background-color: aqua;
-}
-
-.btn_x button{
-  background-color: red;
-}
-
-
-.btn_x i{
-    display: none;
+  
 }

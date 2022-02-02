@@ -6,7 +6,6 @@ import "./Filter.css";
 export default function Filter() {
   const [genres, setGenres] = useState([]);
 
-
   useEffect(() => {
     async function FetchGenre() {
       try {
@@ -23,31 +22,33 @@ export default function Filter() {
     FetchGenre();
   }, []);
 
+  const HandleChangeColor = (event) => {
+    const btn = event.target;
+    btn.style.backgroundColor = "orange";
+  };
 
-
-  
   return (
-    <>
-      <h1>Milhoes de Filmes, series e oessoas para descobrir. Explore ja.</h1>
+    <div className="filter_background">
+      <h1>Milhoes de Filmes, series e pessoas para descobrir. Explore ja.</h1>
       <div>
         <p> FILTRE POR : </p>
-        {genres.map((typeMovie) => {
-          return (
-            <div   key={typeMovie.id}>
-              <button type="button" onClick={(event) => {
-
-                  console.log("voce clicou em",  event.target.name)
-
-
-              }} name={typeMovie.name} >
-                {typeMovie.name}
+        <div className="filter">
+          {genres.map((typeMovie) => {
+            return (
+              <button
+                type="button"
+                className="filter_btn"
+                key={typeMovie.id}
+                onClick={HandleChangeColor}
+                name={typeMovie.name}
+              >
+                {typeMovie.name} <i className="fas fa-times"></i>
               </button>
-              <i className="fas fa-times"></i>
-            </div>
-          );
-        })}
+            );
+          })}
+        </div>
       </div>
-    </>
+    </div>
   );
 }
 
