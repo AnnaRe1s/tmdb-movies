@@ -5,18 +5,20 @@
 }
 
 .card {
-  border: 2px solid black;
+  box-shadow: 3px 3px 3px rgba(150, 150, 150, 0.692);
+  border-radius: 5px;
   padding: 5px;
   margin: 5px;
   display: flex;
   flex-direction: column;
   width: 140px;
-  height: 215px;;
+  height: 215px;
 }
 
 .card img {
-  border: 2px solid pink;
-  height: 160px;
+  height: 155px;
+  width: 160px;
+  border-radius: 7px;
 }
 
 .card h3 {
@@ -24,27 +26,21 @@
   text-decoration: none;
 }
 
-
 @media screen and (min-width: 600px) {
-
   /* .allCards {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
   } */
-  
+
   .card {
     margin: 18px;
     width: 160px;
     height: 215px;
   }
-  
-  
+
   .card h3 {
     font-size: 16px;
     text-decoration: none;
   }
-  
-  
-
 }

@@ -62,4 +62,4 @@ export default function DetailsMovie() {
     );
   });
 }
-// https://api.themoviedb.org/3/movie/634649/credits?api_key=249da317fa7d1b9866d6eb1bca1a3a77&language=en-US
+

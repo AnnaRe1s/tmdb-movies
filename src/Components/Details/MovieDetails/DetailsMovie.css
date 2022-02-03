@@ -33,7 +33,7 @@
 }
 
 .detail__sinopse {
-  padding: 15px;
+  padding: 15px 0;
 }
 
 .detail__sinopse h4 {
@@ -55,7 +55,7 @@
   .detail_img {
     width: 300px;
     height: auto;
-    margin: 30px 80px;
+    margin: 30px 30px;
     border-radius: 10px;
     position: absolute;
     top: 80px;
@@ -64,7 +64,7 @@
   .details_info {
     position: relative;
     top: 33px;
-    left: 20%;
+    left: 23%;
   }
 
   .details_info div {
@@ -83,6 +83,5 @@
     width: 40%;
     position: relative;
     top: 5%;
- 
   }
 }

@@ -2,3 +2,19 @@
   font-family: "Roboto", sans-serif;
   margin: 0px;
 }
+
+*::-webkit-scrollbar {
+  width: 15px;
+}
+
+*::-webkit-scrollbar-track {
+  background: rgb(219, 216, 216);
+  
+}
+
+*::-webkit-scrollbar-thumb {
+  width: 10px;
+  background-color: rgb(177, 174, 174);
+  border-radius: 20px;
+  border: 1px solid rgba(143, 142, 142, 0.493);
+}

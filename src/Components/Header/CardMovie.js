@@ -2,9 +2,7 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
-
-import "./CardMovie.css"
-
+import "./CardMovie.css";
 
 export default function CardMovie() {
   const [movies, setMovies] = useState([]);
@@ -29,20 +27,22 @@ export default function CardMovie() {
 
   return (
     <div className="allCards">
-{movies.map((movie) => {
-    return (
-      // console.log(`https://image.tmdb.org/t/p/original${movie.poster_path}`)
-      <Link to={`details/${movie.id}`} key={movie.id} className="card"  style={{textDecoration: "none",  fontSize: "10px"}}>
-        <img
-          scr={`https://image.tmdb.org/t/p/original${movie.poster_path}`} 
-          alt={movie.original_title}
-        />
-        <h3 >{movie.title}</h3>
-
-      </Link>
-    );
-  })}
+      {movies.map((movie) => {
+        return (
+          <Link
+            to={`details/${movie.id}`}
+            key={movie.id}
+            className="card"
+            style={{ textDecoration: "none", fontSize: "10px" }}
+          >
+            <img
+              src={`https://image.tmdb.org/t/p/original${movie.backdrop_path}`}
+              alt={movie.name}
+            />
+            <h3>{movie.title}</h3>
+          </Link>
+        );
+      })}
     </div>
-    
-    )
+  );
 }

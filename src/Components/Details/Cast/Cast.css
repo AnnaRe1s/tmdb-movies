@@ -1,0 +1,76 @@
+.cast {
+  position: absolute;
+  top: 110%;
+  margin: 10px;
+}
+
+.cast__background {
+  display: flex;
+  flex-direction: row;
+  width: 100vw;
+  overflow-x: scroll;
+  overflow-y: hidden;
+  white-space: nowrap;
+  -webkit-overflow-scrolling: touch;
+}
+
+.cast__card {
+  margin: 5px;
+  padding: 5px;
+  box-shadow: 2px 2px 3px #80808059;
+  border-radius: 10px;
+}
+
+.cast__card h3 {
+  font-size: 14px;
+}
+
+.cast__card h4 {
+  font-size: 14px;
+  font-weight: 300;
+}
+
+.cast__img {
+  width: 100px;
+  margin: 6px;
+  border-radius: 5px;
+}
+
+@media screen and (min-width: 600px) {
+  .cast {
+    position: absolute;
+    top: 85%;
+    margin: 10px;
+  }
+
+  .cast__background {
+    display: flex;
+    flex-direction: row;
+    width: 100vw;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    white-space: nowrap;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .cast__card {
+    margin: 5px;
+    padding: 5px;
+    box-shadow: 2px 2px 3px #80808059;
+    border-radius: 10px;
+  }
+
+  .cast__card h3 {
+    font-size: 18px;
+  }
+
+  .cast__card h4 {
+    font-size: 16px;
+    font-weight: 300;
+  }
+  .cast__img {
+    width: 160px;
+    margin: 6px;
+    border-radius: 5px;
+  }
+}
