@@ -13,9 +13,6 @@ export default function CardMovie() {
         const response = await axios.get(
           "https://api.themoviedb.org/3/movie/popular?api_key=249da317fa7d1b9866d6eb1bca1a3a77"
         );
-
-        console.log("*******************", response.data.results);
-
         setMovies([...response.data.results]);
       } catch (err) {
         console.log(err);

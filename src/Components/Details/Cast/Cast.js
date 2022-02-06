@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 
 import "./Cast.css";
+import imgNull from "../../../Assests/user.png";
 
 export default function Cast() {
   const [casts, setCasts] = useState([]);
@@ -32,15 +33,20 @@ export default function Cast() {
         {casts.map((cast) => {
           return (
             <div key={cast.credit_id} className="cast__card">
-           
+              {cast.profile_path === null ? (
+                <img
+                  src={imgNull}
+                  alt={cast.original_name}
+                  className="cast__imgNull"
+                />
+              ) : (
+                <img
+                  src={`https://image.tmdb.org/t/p/original${cast.profile_path}`}
+                  alt={cast.name}
+                  className="cast__img"
+                />
+              )}
 
-
-            
-              <img
-                src={`https://image.tmdb.org/t/p/original${cast.profile_path}`}
-                alt={cast.name}
-                className="cast__img"
-              />
               <h3>{cast.original_name}</h3>
               <h4>{cast.character}</h4>
             </div>

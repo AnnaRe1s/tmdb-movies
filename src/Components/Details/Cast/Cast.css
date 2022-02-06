@@ -1,9 +1,6 @@
 .cast {
-  position: absolute;
-  top: 110%;
   margin: 10px;
 }
-
 .cast__background {
   display: flex;
   flex-direction: row;
@@ -15,7 +12,7 @@
 }
 
 .cast__card {
-  margin: 5px;
+  margin: 20px 5px;
   padding: 5px;
   box-shadow: 2px 2px 3px #80808059;
   border-radius: 10px;
@@ -36,17 +33,22 @@
   border-radius: 5px;
 }
 
+.cast__imgNull {
+  width: 167px;
+  margin: 6px;
+  border-radius: 5px;
+  height: 237px;
+}
+
 @media screen and (min-width: 600px) {
   .cast {
-    position: absolute;
-    top: 85%;
-    margin: 10px;
+    margin-top: 118px;
   }
 
   .cast__background {
     display: flex;
     flex-direction: row;
-    width: 100vw;
+    width: 100%;
     overflow-x: scroll;
     overflow-y: hidden;
     white-space: nowrap;
