@@ -1,20 +1,22 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 
-import "./Filter.css";
+// style import
+import { H1, P } from "../../../Styles_Global/Texts";
+import { ButtonFilter } from "../../../Styles_Global/Butons";
+import { Background, Flexwrap } from "../../../Styles_Global/Div";
 
 export default function Filter() {
   const [genres, setGenres] = useState([]);
-  
+
 
   useEffect(() => {
     async function FetchGenre() {
       try {
         const response = await axios.get(
           "https://api.themoviedb.org/3/genre/movie/list?api_key=249da317fa7d1b9866d6eb1bca1a3a77&language=en-US"
-          
         );
-        console.log("*************", response)
+        console.log("*************", response);
 
         setGenres([...response.data.genres]);
       } catch (err) {
@@ -25,33 +27,26 @@ export default function Filter() {
     FetchGenre();
   }, []);
 
-  const HandleChangeColor = (event) => {
-    const btn = event.target;
-    btn.style.backgroundColor = "orange";
-  };
-
   return (
-    <div className="filter_background">
-      <h1>Milhoes de Filmes, series e pessoas para descobrir. Explore ja.</h1>
-      <div>
-        <p> FILTRE POR : </p>
-        <div className="filter">
+    <Background>
+      <H1>Milhões de Filmes, séries e pessoas para descobrir. Explore já.</H1>
+      <>
+        <P> FILTRE POR : </P>
+        <Flexwrap>
           {genres.map((typeMovie) => {
             return (
-              <button
+              <ButtonFilter
                 type="button"
-                className="filter_btn"
                 key={typeMovie.id}
-                onClick={HandleChangeColor}
                 name={typeMovie.name}
               >
-                {typeMovie.name} <i className="fas fa-times"></i>
-              </button>
+                {typeMovie.name}
+              </ButtonFilter>
             );
           })}
-        </div>
-      </div>
-    </div>
+        </Flexwrap>
+      </>
+    </Background>
   );
 }
 

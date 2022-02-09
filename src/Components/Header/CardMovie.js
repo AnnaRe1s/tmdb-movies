@@ -2,7 +2,11 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
+// style import
 import Pagination from "@material-ui/lab/Pagination";
+import { H3 } from "../../Styles_Global/Texts";
+import { Column, Flexwrap } from "../../Styles_Global/Div";
+
 import "./CardMovie.css";
 
 export default function CardMovie() {
@@ -35,31 +39,35 @@ export default function CardMovie() {
   };
 
   return (
-    <div className="allCards">
-      <div className="allCards_wrap">
+    <Column>
+      <Flexwrap>
         {movies.map((movie) => {
           return (
             <Link
               to={`details/${movie.id}`}
               key={movie.id}
               className="card"
-              style={{ textDecoration: "none", fontSize: "10px" }}
+              style={{
+                textDecoration: "none",
+                fontSize: "10px",
+                color: "black",
+              }}
             >
               <img
                 src={`https://image.tmdb.org/t/p/original${movie.backdrop_path}`}
                 alt={movie.name}
               />
-              <h3>{movie.title}</h3>
+              <H3>{movie.title}</H3>
             </Link>
           );
         })}
-      </div>
+      </Flexwrap>
       <Pagination
         count={100}
         variant="outlined"
         onClick={handleClick}
         className="cards_pages"
       />
-    </div>
+    </Column>
   );
 }

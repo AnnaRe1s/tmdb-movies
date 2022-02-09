@@ -4,7 +4,7 @@ import App from "./Components/App";
 import { BrowserRouter } from "react-router-dom";
 
 // import global css
-import "./Style/GlobalStyle.css";
+import "./Styles_Global/GlobalStyle.css";
 
 ReactDOM.render(
   <React.StrictMode>
