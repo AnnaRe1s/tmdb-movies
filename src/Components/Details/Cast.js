@@ -2,11 +2,13 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 
-import "./Cast.css";
-import { Castdiv, HorizontalCards, Cards } from "../../../Styles_Global/Div";
-import { H1, H3, H4 } from "../../../Styles_Global/Texts";
-import { Img } from "../../../Styles_Global/Imagens";
-import imgNull from "../../../Assests/user.png";
+// style import
+import { Castdiv, HorizontalCards, Cards } from "../../Styles_Global/Div";
+import { H1, H3, H4Ligth } from "../../Styles_Global/Texts";
+import { Img } from "../../Styles_Global/Imagens";
+
+// import img
+import imgNull from "../../Assests/user.png";
 
 export default function Cast() {
   const [casts, setCasts] = useState([]);
@@ -27,7 +29,7 @@ export default function Cast() {
     fecthCast();
   }, []);
 
-  // https://api.themoviedb.org/3/movie/${id}/credits?api_key=249da317fa7d1b9866d6eb1bca1a3a77&language=en-US
+
 
   return (
     <Castdiv>
@@ -46,7 +48,7 @@ export default function Cast() {
               )}
 
               <H3>{cast.original_name}</H3>
-              <H4>{cast.character}</H4>
+              <H4Ligth>{cast.character}</H4Ligth>
             </Cards>
           );
         })}

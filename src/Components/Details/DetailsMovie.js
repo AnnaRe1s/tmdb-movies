@@ -2,9 +2,9 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 
+// style import
 import { H1, H4, H5, PLight, P } from "../../Styles_Global/Texts";
 import { ImgDetails } from "../../Styles_Global/Imagens";
-
 import {
   BackgroundDetails,
   InformationCard,
