@@ -2,7 +2,15 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 
-import "./DetailsMovie.css";
+import { H1, H4, H5, PLight, P } from "../../Styles_Global/Texts";
+import { ImgDetails } from "../../Styles_Global/Imagens";
+
+import {
+  BackgroundDetails,
+  InformationCard,
+  FlexRow,
+  SinopseDetails,
+} from "../../Styles_Global/Div";
 
 export default function DetailsMovie() {
   const [details, setDetails] = useState([]);
@@ -25,41 +33,39 @@ export default function DetailsMovie() {
 
   return details.map((detail) => {
     return (
-      <div className="details_background" key={detail.id}>
-        <img
+      <BackgroundDetails key={detail.id}>
+        <ImgDetails
           src={`https://image.tmdb.org/t/p/original${detail.poster_path}`}
           alt={`movie ${detail.original_title}`}
-          className="detail_img"
         />
-
-        <div className="details_info">
-          <h1>{detail.original_title}</h1>
+        <InformationCard>
+          <H1>{detail.original_title}</H1>
 
           <div>
-            <h5> idade</h5>
-            <h5>{detail.release_date}</h5>
+            <H5>{detail.release_date}</H5>
 
-            <div className="detail_genre">
+            <FlexRow>
               {detail.genres.map((element) => {
-                return <h5 key={element.id}>{element.name},</h5>;
+                return <H5 key={element.id}>{element.name},</H5>;
               })}
-            </div>
+            </FlexRow>
 
-            <h5>{detail.runtime}</h5>
+            <H5>{detail.runtime}</H5>
           </div>
 
           <div>
-            <h5> Avaliacao do usuario </h5>
-            <p> {detail.vote_average} </p>
+            <H5>
+              {" "}
+              Avaliacao do usuario <P> {detail.vote_average} </P>{" "}
+            </H5>
           </div>
 
-          <div className="detail__sinopse">
-            <h4>Sinopse</h4>
-            <p> {detail.overview}</p>
-          </div> 
-        </div>
-      </div>
+          <SinopseDetails>
+            <H4>Sinopse</H4>
+            <PLight> {detail.overview}</PLight>
+          </SinopseDetails>
+        </InformationCard>
+      </BackgroundDetails>
     );
   });
 }
-

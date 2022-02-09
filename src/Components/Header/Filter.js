@@ -2,9 +2,9 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 
 // style import
-import { H1, P } from "../../../Styles_Global/Texts";
-import { ButtonFilter } from "../../../Styles_Global/Butons";
-import { Background, Flexwrap } from "../../../Styles_Global/Div";
+import { H1, P } from "../../Styles_Global/Texts";
+import { ButtonFilter } from "../../Styles_Global/Butons";
+import { Background, Flexwrap } from "../../Styles_Global/Div";
 
 export default function Filter() {
   const [genres, setGenres] = useState([]);

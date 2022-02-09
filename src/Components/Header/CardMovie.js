@@ -1,13 +1,12 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
 
 // style import
 import Pagination from "@material-ui/lab/Pagination";
 import { H3 } from "../../Styles_Global/Texts";
 import { Column, Flexwrap } from "../../Styles_Global/Div";
-
-import "./CardMovie.css";
+import { Img } from "../../Styles_Global/Imagens";
+import { Links } from "../../Styles_Global/Links";
 
 export default function CardMovie() {
   const [movies, setMovies] = useState([]);
@@ -43,22 +42,17 @@ export default function CardMovie() {
       <Flexwrap>
         {movies.map((movie) => {
           return (
-            <Link
-              to={`details/${movie.id}`}
+            <Links
+              href={`details/${movie.id}`}
               key={movie.id}
               className="card"
-              style={{
-                textDecoration: "none",
-                fontSize: "10px",
-                color: "black",
-              }}
             >
-              <img
+              <Img
                 src={`https://image.tmdb.org/t/p/original${movie.backdrop_path}`}
                 alt={movie.name}
               />
               <H3>{movie.title}</H3>
-            </Link>
+            </Links>
           );
         })}
       </Flexwrap>

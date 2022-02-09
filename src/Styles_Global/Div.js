@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { whiteColor, backgroundColor } from "./Colors";
+import { whiteColor, backgroundColor, shadowColor } from "./Colors";
 
 // Background
 
@@ -14,6 +14,58 @@ export const Background = styled.div`
 
   @media screen and (min-width: 600px) {
     padding: 10px 80px;
+  }
+`;
+
+export const BackgroundDetails = styled.div`
+  background-color: ${backgroundColor};
+  color: ${whiteColor};
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+
+  @media screen and (min-width: 600px) {
+    display: flex;
+    flex-direction: row;
+    height: 400px;
+  }
+`;
+
+// Cards
+
+export const Cards = styled.div`
+  margin: 20px 5px;
+  padding: 5px;
+  box-shadow: 2px 2px 3px ${shadowColor};
+  border-radius: 10px;
+  @media screen and (min-width: 600px) {
+    margin: 5px;
+    padding: 5px;
+    box-shadow: 2px 2px 3px ${shadowColor};
+    border-radius: 10px;
+  }
+`;
+
+export const InformationCard = styled.div`
+  padding: 15px;
+
+  @media screen and (min-width: 600px) {
+    position: relative;
+    top: 33px;
+    left: 23%;
+    padding: 0px;
+    width: 50%;
+  }
+`;
+
+export const SinopseDetails = styled.div`
+  padding: 15px 0;
+
+  @media screen and (min-width: 600px) {
+    padding: 10px 0;
+    width: 40%;
+    position: relative;
+    top: 5%;
   }
 `;
 
@@ -38,5 +90,42 @@ export const Column = styled.div`
 
   @media screen and (min-width: 600px) {
     align-items: center;
+  }
+`;
+
+export const FlexRow = styled.div`
+  display: flex;
+  flex-direction: row;
+`;
+
+// Margin
+
+export const Castdiv = styled.div`
+  margin: 10px;
+
+  @media screen and (min-width: 600px) {
+    margin-top: 118px;
+  }
+`;
+
+// Scroll horizontal
+
+export const HorizontalCards = styled.div`
+  display: flex;
+  flex-direction: row;
+  width: 100vw;
+  overflow-x: scroll;
+  overflow-y: hidden;
+  white-space: nowrap;
+  -webkit-overflow-scrolling: touch;
+
+  @media screen and (min-width: 600px) {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    white-space: nowrap;
+    -webkit-overflow-scrolling: touch;
   }
 `;
