@@ -38,7 +38,7 @@ export default function CardMovie() {
   };
 
   return (
-    <Column>
+    <Column center>
       <Flexwrap>
         {movies.map((movie) => {
           return (

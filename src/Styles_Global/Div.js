@@ -58,14 +58,33 @@ export const InformationCard = styled.div`
   }
 `;
 
+export const ReccomendCard = styled.div`
+
+box-shadow: 3px 3px 3px rgba(150, 150, 150, 0.692);
+  border-radius: 5px;
+  width: 140px;
+  padding: 5px;
+  margin: 5px;
+}
+@media screen and (min-width: 600px) {
+  box-shadow: 3px 3px 3px rgba(150, 150, 150, 0.692);
+    border-radius: 5px;
+    width: 240px;
+    height: 200px;
+    padding: 10px;
+    margin: 10px;
+}
+
+`;
+
 export const SinopseDetails = styled.div`
   padding: 15px 0;
 
   @media screen and (min-width: 600px) {
     padding: 10px 0;
-    width: 40%;
     position: relative;
     top: 5%;
+    
   }
 `;
 
@@ -89,7 +108,8 @@ export const Column = styled.div`
   flex-direction: column;
 
   @media screen and (min-width: 600px) {
-    align-items: center;
+    align-items: ${(props) => (props.center ? "center" : "left")};
+    padding: 10px;
   }
 `;
 

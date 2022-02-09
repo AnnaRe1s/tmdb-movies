@@ -1,8 +1,11 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
-import { useParams, Link, useNavigate } from "react-router-dom";
+import { useParams } from "react-router-dom";
 
-import "./Recommend.css";
+// style import
+import { Img } from "../../Styles_Global/Imagens";
+import { H3 } from "../../Styles_Global/Texts";
+import { ReccomendCard, Flexwrap, Column } from "../../Styles_Global/Div";
 
 export default function Recommend() {
   const [recommendations, setRecommendations] = useState([]);
@@ -24,31 +27,29 @@ export default function Recommend() {
   }, [recommendations]);
 
   return (
-    <div className="recommend">
+    <Column>
       <h1> Recommendation</h1>
 
-      <div className="recommend_FlexRow">
+      <Flexwrap>
         {recommendations.map((recommendMovie) => {
           return (
-            <div
+            <ReccomendCard
               key={recommendMovie.id}
-              className="recommend_card"
               onClick={() => {
                 window.location.href = `/details/${recommendMovie.id}`;
               }}
             >
-              <img
+              <Img
                 src={`https://image.tmdb.org/t/p/original${recommendMovie.backdrop_path}`}
                 alt={recommendMovie.title}
-                className="recommend_img"
               />
               <div>
-                <h2>{recommendMovie.title}</h2>
+                <H3>{recommendMovie.title}</H3>
               </div>
-            </div>
+            </ReccomendCard>
           );
         })}
-      </div>
-    </div>
+      </Flexwrap>
+    </Column>
   );
 }
